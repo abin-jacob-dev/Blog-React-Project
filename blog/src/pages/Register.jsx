@@ -8,10 +8,30 @@ function Register() {
   const { register } = useAuth()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const handleSubmit = (e) => {
+  const [error, setError] = useState("")
+
+  const validatePassword = (password) => {
+    if (
+      password.length < 8 ||
+      !/[A-Z]/.test(password) ||
+      !/[a-z]/.test(password) ||
+      !/[0-9]/.test(password) ||
+      !/[^A-Za-z0-9]/.test(password)
+    ) {
+      return "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character.";
+    }
+    return ""
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
-    register(email, password)
+    const validationError = validatePassword(password);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setError("");
+    await register(email, password)
     navigate('/')
   }
   return (
@@ -20,6 +40,7 @@ function Register() {
       <h1>Register</h1>
       <input onChange={(e) => setEmail(e.target.value)} type="email" value={email} placeholder='Email' />
       <input onChange={(e) => setPassword(e.target.value)} type="password" value={password} placeholder='Password' />
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <button>Register</button>
       <Link to='/login'>Login</Link>
     </form>
