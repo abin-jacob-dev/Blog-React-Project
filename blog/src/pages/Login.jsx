@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../context/AuthContext';
 
 
 function Login() {
+    const navigate = useNavigate()
     const { login } = useAuth()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault()
-        login(email, password)
+        login(email, password).then((data) => {
+            return navigate('/')
+        })
     }
     return (
         <form onSubmit={handleSubmit} >
