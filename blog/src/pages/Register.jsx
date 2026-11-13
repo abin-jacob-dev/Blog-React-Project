@@ -29,10 +29,18 @@ function Register() {
       setError(validationError);
       return;
     }
-
     setError("");
-    await register(email, password)
-    navigate('/')
+    try {
+
+      await register(email, password)
+      navigate('/')
+    } catch (error) {
+      if (error.code === 'auth/email-already-in-use') {
+        setError('Email already registered')
+      }else{
+        setError('Registration failed. Please try again.')
+      }
+    }
   }
   return (
 
