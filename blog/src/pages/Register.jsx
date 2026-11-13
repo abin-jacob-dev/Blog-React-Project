@@ -33,6 +33,7 @@ function Register() {
     try {
 
       await register(email, password)
+      
       navigate('/login')
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
