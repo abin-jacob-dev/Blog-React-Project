@@ -1,0 +1,64 @@
+/* ===== Form container ===== */
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 24px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+/* ===== Title input ===== */
+.blog-form input {
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #111111;
+  background-color: #ffffff;
+}
+
+/* ===== Content textarea ===== */
+.blog-form textarea {
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  min-height: 120px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #111111;
+  background-color: #ffffff;
+  resize: vertical;
+}
+
+/* ===== Focus state for both fields ===== */
+.blog-form input:focus,
+.blog-form textarea:focus {
+  outline: none;
+  border-color: #111111;
+}
+
+/* ===== Publish / Update button ===== */
+.blog-form button {
+  padding: 10px;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.blog-form button:hover {
+  background-color: #000000;
+}
+
+/* ===== "My Blogs" link ===== */
+.blog-form a {
+  text-align: center;
+  color: #111111;
+  font-size: 14px;
+}

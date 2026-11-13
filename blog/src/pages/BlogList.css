@@ -1,0 +1,105 @@
+/* ===== Header row (Add Blog + Logout) ===== */
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ===== "Add Blog" link ===== */
+.blog-header a {
+  color: #111111;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blog-header a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Logout button ===== */
+.blog-header button {
+  padding: 6px 12px;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.blog-header button:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* ===== Page heading ===== */
+.blog-heading {
+  max-width: 700px;
+  margin: 0 auto 16px auto;
+  padding: 0 16px;
+  font-size: 24px;
+  color: #111111;
+}
+
+/* ===== List container ===== */
+.blog-list {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== One blog card ===== */
+.blog-card {
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+}
+
+/* ===== Blog id ===== */
+.blog-id {
+  color: #888888;
+  font-size: 12px;
+  margin: 0 0 8px 0;
+}
+
+/* ===== Blog title ===== */
+.blog-title {
+  font-size: 18px;
+  color: #111111;
+  margin: 0 0 8px 0;
+}
+
+/* ===== Blog content ===== */
+.blog-content {
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+/* ===== Delete + Edit buttons ===== */
+.blog-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.blog-actions button {
+  padding: 6px 12px;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.blog-actions button:hover {
+  background-color: #111111;
+  color: #ffffff;
+}

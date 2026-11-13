@@ -16,8 +16,9 @@ function Login() {
     }
     return (
         <form onSubmit={handleSubmit} >
-            <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" />
-            <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" />
+            <h1>Login</h1>
+            <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Email' type="email" />
+            <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder='Password' type="password" />
             <button>Login</button>
             <Link to='/register'>Register</Link>
         </form>

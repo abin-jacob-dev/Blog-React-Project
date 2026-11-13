@@ -3,6 +3,7 @@ import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from "fir
 import { db } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate, useParams } from "react-router-dom";
+import './BlogForm.css';
 
 function BlogForm() {
     const { user } = useAuth()
@@ -53,11 +54,11 @@ function BlogForm() {
         navigate('/')
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <input onChange={(e) => setTitle(e.target.value)} value={title} placeholder='Blog Title' type="text" />
-            <textarea onChange={(e) => setContent(e.target.value)} value={content} placeholder='Blog Content' ></textarea>
-            <button>{blogId ? "Update Blog" : "Publish Blog"}</button>
-            <Link to="/">My Blogs</Link>
+        <form className="blog-form" onSubmit={handleSubmit}>
+            <input className="blog-form-input" onChange={(e) => setTitle(e.target.value)} value={title} placeholder='Blog Title' type="text" />
+            <textarea className="blog-form-textarea" onChange={(e) => setContent(e.target.value)} value={content} placeholder='Blog Content' ></textarea>
+            <button className="blog-form-button">{blogId ? "Update Blog" : "Publish Blog"}</button>
+            <Link className="blog-form-link" to="/">My Blogs</Link>
         </form>
     )
 }

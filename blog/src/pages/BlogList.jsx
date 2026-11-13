@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import { Link, useNavigate } from "react-router-dom";
 import { collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
+import './BlogList.css';
 
 
 
@@ -37,19 +38,21 @@ function BlogList() {
     }
     return (
         <>
-            <Link to="/add" >Add Blog</Link>
-            <button onClick={logout}>Logout</button>
-            <div>My Blogs </div>
-
-            <div>
+            <div className="blog-header">
+                <Link to="/add">Add Blog</Link>
+                <button onClick={logout}>Logout</button>
+            </div>
+            <h2 className="blog-heading">My Blogs</h2>
+            <div className="blog-list">
                 {blogs.map(blog => (
-                    <div key={blog.id}>
-                        <p>{blog.id}</p>
-                        <h4>{blog.title}</h4>
-                        <p>{blog.content}</p>
-                        <button onClick={() => handleDelete(blog.id)}>Delete</button>
-                        <button onClick={() => handleEdit(blog.id)}>Edit</button>
-                        <hr />
+                    <div className="blog-card" key={blog.id}>
+                        <p className="blog-id">{blog.id}</p>
+                        <h4 className="blog-title">{blog.title}</h4>
+                        <p className="blog-content">{blog.content}</p>
+                        <div className="blog-actions">
+                            <button onClick={() => handleDelete(blog.id)}>Delete</button>
+                            <button onClick={() => handleEdit(blog.id)}>Edit</button>
+                        </div>
                     </div>
                 ))}
             </div>
