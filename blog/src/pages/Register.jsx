@@ -5,7 +5,7 @@ import './Register.css';
 
 function Register() {
   const navigate = useNavigate()
-  const { register } = useAuth()
+  const { register, logout } = useAuth()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
@@ -33,12 +33,12 @@ function Register() {
     try {
 
       await register(email, password)
-      
+      logout()
       navigate('/login')
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         setError('Email already registered')
-      }else{
+      } else {
         setError('Registration failed. Please try again.')
       }
     }
