@@ -16,6 +16,7 @@ function App() {
       <Route element={<ProtectedRoute />}>
         <Route path='/' element={<BlogList />} />
         <Route path='/add' element={<BlogForm />} />
+        <Route path='/edit/:blogId' element={<BlogForm />} />
       </Route>
     </Routes>
   )
